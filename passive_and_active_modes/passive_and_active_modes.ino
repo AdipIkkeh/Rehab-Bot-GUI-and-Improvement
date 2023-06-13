@@ -280,7 +280,7 @@ void check_serial() {
           }
         }
 
-        else if (measuredAngle == targetAngle) {
+        if (measuredAngle == targetAngle) {
           pidGo = false;
           break;
         }
