@@ -9,7 +9,7 @@ import numpy as np
 
 #Driver Code
 root = tk.Tk()
-root.attributes('-fullscreen', True)
+# root.attributes('-fullscreen', True)
 root.title("Rehab-Bot App")
 root.configure(bg='cyan')
 
@@ -54,7 +54,7 @@ send_code = str()
 a1 = int()
 b1 = int()
 b2 = int()
-berhenti_rehabilitasi_pasif_clicked = False
+berhenti_rehabilitasi_clicked = False
 
 #Functions
 def serial_write_mode_s():
@@ -276,15 +276,20 @@ def update_3(event):
                                 font=("Arial",14,"bold"))
 
 def update_pembacaan_sudut():
-    data = arduino.readline().decode().strip()
-    if data:
-        label_Pasif_Ongoing_Page_10.config(text=str(data)+"°",
-                                fg='black',bg='white',
-                                font=("Arial",20,"bold"))
+    global berhenti_rehabilitasi_clicked
+    if berhenti_rehabilitasi_clicked:
+        return
+    
+    else:
+        data = arduino.readline().decode().strip()
+        if data:
+            label_Pasif_Ongoing_Page_10.config(text=str(data)+"°",
+                                    fg='black',bg='white',
+                                    font=("Arial",20,"bold"))
 
-        label_Aktif_Ongoing_Page_10.config(text=str(data)+"°",
-                                fg='black',bg='white',
-                                font=("Arial",20,"bold"))
+            label_Aktif_Ongoing_Page_10.config(text=str(data)+"°",
+                                    fg='black',bg='white',
+                                    font=("Arial",20,"bold"))
 
     root.after(100,update_pembacaan_sudut)
 
@@ -366,16 +371,10 @@ def second_down():
 
     update_1("<B1-Click>")
 
-def callback():
-    global berhenti_rehabilitasi_pasif_clicked
-    berhenti_rehabilitasi_pasif_clicked = not berhenti_rehabilitasi_pasif_clicked
-
 def loop_time():
-    global time_left, hours, mins, secs, berhenti_rehabilitasi_pasif_clicked, frames
-    if berhenti_rehabilitasi_pasif_clicked == True:
-        berhenti_rehabilitasi_pasif_clicked = False
-    
-    elif time_left > 0:
+    global time_left, hours, mins, secs, berhenti_rehabilitasi_clicked, frames
+
+    if time_left > 0 and berhenti_rehabilitasi_clicked == False:
         # updating time variables
         mins,secs = divmod(time_left,60)
         hours = 0
@@ -399,11 +398,11 @@ def loop_time():
         # after every one sec by one
         time_left -= 1
 
-        # print(time_left)
-
-        # looping driver
         root.after(1000,loop_time)
 
+    elif berhenti_rehabilitasi_clicked == True:
+        return
+    
     elif time_left == 0:
         # update gui
         label_Pasif_Ongoing_Page_4.config(text="00",
@@ -429,8 +428,12 @@ def loop_time():
         # Arduino Code
         serial_write_mode_s()
 
+        return
+
 def mulai_rehabilitasi_pasif():
-    global smax_p, smin_p, kmes_p, rdur_p, time_left, frames
+    global smax_p, smin_p, kmes_p, rdur_p, time_left, frames, berhenti_rehabilitasi_clicked
+
+    berhenti_rehabilitasi_clicked = False
     
     slider_Pasif_Ubah_Page_1.set(smax_p)
     slider_Pasif_Ubah_Page_2.set(smin_p)
@@ -463,7 +466,9 @@ def mulai_rehabilitasi_pasif():
     serial_write_mode_1(smax_p, smin_p, kmes_p, rdur_p)
 
 def mulai_rehabilitasi_aktif():
-    global smax_a, smin_a, kpeg_a, cdam_a, frames
+    global smax_a, smin_a, kpeg_a, cdam_a, frames, berhenti_rehabilitasi_clicked
+
+    berhenti_rehabilitasi_clicked = False
     
     for frame in frames:
         frame.pack_forget()
@@ -520,14 +525,14 @@ def ubah_rehabilitasi_pasif_confirmed():
     root.after(1000, serial_write_mode_1, smaxbaru_p, sminbaru_p, kmes_p, rdurbaru_p)
 
 def berhenti_rehabilitasi_pasif():
-    global frames
+    global frames, berhenti_rehabilitasi_clicked
     
     for frame in frames:
         frame.pack_forget()
         
     Finish_Page_Frame.pack()
 
-    callback()
+    berhenti_rehabilitasi_clicked = True
 
     # Arduino Code
     serial_write_mode_s()
@@ -558,12 +563,14 @@ def ubah_rehabilitasi_aktif_confirmed():
     root.after(1000, serial_write_mode_3, smaxbaru_a, sminbaru_a, kpeg_a, cdam_a)
 
 def berhenti_rehabilitasi_aktif():
-    global frames
+    global frames, berhenti_rehabilitasi_clicked
     
     for frame in frames:
         frame.pack_forget()
         
     Finish_Page_Frame.pack()
+
+    berhenti_rehabilitasi_clicked = True
 
     # Arduino Code
     serial_write_mode_s()
