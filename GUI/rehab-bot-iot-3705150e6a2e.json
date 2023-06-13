@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "rehab-bot-iot",
+  "private_key_id": "3705150e6a2e84624db3c7e1b32422ff86cfd8e2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDA9DkhoMjYHRAN\nH9BG+BFzKMUrXR0ykstQZ41gWMzMv1SCBWTsxXNlTQZZP1Z7aKJOK8+YPUAGsB1/\nEjXpgb8b5/t6QqSXpCvt5p63yej/qAq5m4+LwQe+27ImxlZ1rlEh38nCc48rxe/+\n0uW6L2V1QHrk2Xl1zgqRB4vKcI1uIIqRzALGICpYpMyj/6Qj5Xq5WTPlhYBR5Dwk\nGwDt2Kn7bGsA1UJX/NE4Ebv9nKmziY8CSBe5+sojDUiSqAnLY5jSo2bUo8lLnDAY\nfQlkmziAx39NWY07CZUhHiHKSJHIwhR14mj5rgPnJo1OssjMhXNDOTz9+LKBLUEP\n9dxnIRd7AgMBAAECggEAEm9C22j2cgSqI+ww2exEE9yGpJNLgX7E2J8MGB25HgFU\nRu0nrKIGBFz3iPn5fpDgm4H+s2zRUSeXqdbzj6ZLET94p0BMDrDWAZn8T/2FD+fe\nHnLeTrEtLEQ7y7iR9MGoFAnCx5vYHIvXV2E5fDBLC94SimASBU9KHdEQFKdBho5/\n8DN4XfJxrQK+PQWKxbEcMTmPI+DEz76fp2I/JWMherFocXj0XFQGkc0wJJUJl15n\nZ8xg4B3NH2IbUJzES2DGbP4SeoE0b8KoJNyyja1yNPWF5d40Bqztoqahy6lSctvu\ny4xzHGWOtY8CP0BptGv5eqx+dQXYhyPdBD8g18n3AQKBgQD5EewKoSkDajhcrW8O\nII2vxhb5slTOGdoQAJnbB4pz+XY/ixPgUiNLYw4ji/HfaSrcxb44rrEZGDKeERXr\nM2VA+2Wj2QhCRR70hFHmgnQFRDKG4abyDKtrnTIc+vaxk798oCg4Pw9OSdFx/2av\n5dg0N7VX4hJ+t+ZrHaATsT31RQKBgQDGUpj33k8LenRDfSuGSil8yj8o3DBXRIvx\nBHZqDsVtDBefWVnI8sD7WFluSVUrCX90fZVKsKE+5SliN8E8yfCIH3PclMBsKi3B\nKK+hXnI3f90jyNvZyEcW/2LliKaPPuOPrcyP4Gz5aYcorrKniAaEjTvH08Ohl7UA\nyl67/5XFvwKBgFODzej2hwENId75jI5pHfk9a8DIKiV9h5/sA6rsyWD/2cWOxdhm\n0kzZ5wjGSREHe4bRi2oIMXvfoEFeK0JVVnNGmJsrD9jgwnNs1uV7Apotdt/BVDA/\nTU9lQ0NyZzu99ew865+IjYJLwD4ATJdYc3l24IiaVmdFFK8AHQfdW5AdAoGBAKeB\n+EXTdTwir7SZMnv4g9YtFO+0Gvh6oyBtPn8R/tq+De2/kEBUGX+x/cdTFSaGnSqN\nL92oFmmDMVMN+J8ZiZnPxxKWaXhyn7a4YK+RkDMkQmoJKvhlWvYnuyZYJyZyXc5r\nY45aZnC7GzfXZnpuP+MRT17WlDQWaQFD7IQpuh0NAoGAUYaiBCW5IZzNlQqBeNSc\n3UEETvrDm4rziyBlALzVcRZzoY2tWMXZw/KYCEhhSBqk7Qf444+8N42Gyq2b8I+o\n3YzHNOGqXNfv8zKzWWTvXYZNq2k3iA2bYQSMBmNLU2P9zx+3AGDv11swIleDXxRU\nLkwm5X7P6PWVrpFL2BNyDLs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rehab-bot123@rehab-bot-iot.iam.gserviceaccount.com",
+  "client_id": "111357182627983596841",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rehab-bot123%40rehab-bot-iot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
